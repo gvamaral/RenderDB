@@ -8,6 +8,13 @@ const pool = new Pool(dbURL);
 
 pool.connect();
 
+exports.getUserById = (id) => {
+    pool.query('SELECT * FROM users WHERE id = $1', [id], (err, results) => {
+        console.log(results.rows[0]);
+        return {'id':results.rows[0].id, 'username' : results.rows[0].username};
+    })
+}
+
 exports.getUsers = (req, res) => {
     pool.query('SELECT * FROM users LIMIT 3', (err, results) => {
         if (err) throw err;
