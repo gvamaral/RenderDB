@@ -29,14 +29,14 @@ function App() {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4200/login",
+      url: "/login",
     }).then((res) => console.log(res));
   };
   const getLoginUser = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4200/getLoginUser",
+      url: "/getLoginUser",
     }).then((res) => {
       if(res.data.username)
         setData(res.data)
@@ -59,7 +59,7 @@ function App() {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4200/logout",
+      url: "/logout",
     }).then((res) => {
       console.log(res.data);
       setMessage(res.data);
