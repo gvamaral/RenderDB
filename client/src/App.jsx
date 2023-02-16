@@ -35,7 +35,6 @@ function App() {
   const getLoginUser = () => {
     Axios({
       method: "GET",
-      withCredentials: true,
       url: "/getLoginUser",
     }).then((res) => {
       if(res.data.username)
@@ -48,7 +47,6 @@ function App() {
   const getAllUsers = () => {
     Axios({
       method: "GET",
-      withCredentials: true,
       url: "/getAllUsers",
     }).then((res) => {
       console.log(res.data);
@@ -58,7 +56,6 @@ function App() {
   const logout = () => {
     Axios({
       method: "GET",
-      withCredentials: true,
       url: "/logout",
     }).then((res) => {
       console.log(res.data);
